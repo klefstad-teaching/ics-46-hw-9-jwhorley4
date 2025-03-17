@@ -25,7 +25,8 @@ add_executable(ladder_main
   ${LADDER_SRC_FILES}
   src/ladder_main.cpp
 )
-
+add_compile_options("-fsanitize=address,undefined")
+link_libraries("-fsanitize=address,undefined")
 find_package(GTest)
 if (GTest_FOUND)
   set(STUDENT_TEST_FILES
